@@ -24,19 +24,19 @@ response = requests.post('https://www.reddit.com/api/v1/access_token',
 token = response.json().get('access_token')
 headers['Authorization'] = f"bearer {token}"
 
-# Initialize VADER
+#Initialize VADER
 analyzer = SentimentIntensityAnalyzer()
 
-# Prompt the user for the subreddit they want to search
+#Prompt the user for the subreddit they want to search
 subreddit_name = input("Enter the subreddit you want to search: ")
 
-# Build the URL for the specified subreddit
+#Build the URL for the specified subreddit
 subreddit_url = f'https://oauth.reddit.com/r/{subreddit_name}/top'
 
-# Get the top posts from the specified subreddit
+#Get the top posts from the specified subreddit
 response = requests.get(subreddit_url, headers=headers, params={'limit': 30})
 
-# Check if the subreddit is valid (response status code 200)
+#Check if the subreddit is valid (response status code 200)
 if response.status_code == 200:
     data = response.json()
         
