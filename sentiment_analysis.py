@@ -17,9 +17,9 @@ headers = {
     'User-Agent': user_agent
 }
 data = {
-    'grant_type': 'password',
-    'username': 'Lollitek',
-    'password': 'davidman132'
+    'grant_type': os.getenv('REDDIT_GRANT_TYPE'),
+    'username': os.getenv('REDDIT_USERNAME'),
+    'password': os.getenv('REDDIT_PASSWORD')
 }
 auth = requests.auth.HTTPBasicAuth(client_id, client_secret)
 
