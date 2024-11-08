@@ -4,12 +4,14 @@ import sys
 import matplotlib.pyplot as plt
 import numpy as np
 from datetime import datetime, timedelta, timezone
+from dotenv import load_dotenv
+import os
 
 sys.stdout.reconfigure(encoding='utf-8')
 
-client_id = 'd5fvQl6EYX9fn7A1NokZcg'
-client_secret = 'JJKNeQVbPvsClNlZ8ywpR1_NIzBaVw'
-user_agent = "python:sentiment_analysis_bot:1.0 (by /u/LolliTek')"
+client_id = 'os.getenv("CLIENT_ID")' //Hidden keys
+client_secret = 'os.getenv("CLIENT_SECRET")'
+user_agent = "os.getenv("USER_AGENT")"
 
 headers = {
     'User-Agent': user_agent
